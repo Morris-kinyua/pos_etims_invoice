@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>POS eTIMS Auto Invoice</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        .section {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 {
+            color: #764ba2;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .feature-card ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .feature-card li {
+            margin: 8px 0;
+        }
+        .workflow {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .workflow ol {
+            counter-reset: item;
+            list-style: none;
+            padding: 0;
+        }
+        .workflow li {
+            counter-increment: item;
+            margin: 15px 0;
+            padding-left: 50px;
+            position: relative;
+        }
+        .workflow li:before {
+            content: counter(item);
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px 5px 5px 0;
+        }
+        .tech-details {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧾 POS eTIMS Auto Invoice</h1>
+        <p>Streamline Your Kenyan Tax Compliance with Automated Invoice Processing</p>
+    </div>
+
+    <div class="section">
+        <h2>📋 Overview</h2>
+        <p>
+            This powerful module revolutionizes invoice management for Kenyan businesses using Odoo POS. 
+            It automatically creates, posts, and pays invoices when you validate POS orders, then seamlessly 
+            integrates with Kenya Revenue Authority's eTIMS system to ensure full tax compliance.
+        </p>
+        <p>
+            <strong>Say goodbye to manual invoice processing and eTIMS submission!</strong> Everything happens 
+            automatically in the background while you focus on serving your customers.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>✨ Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🚀 Automatic Processing</h3>
+                <ul>
+                    <li><strong>Auto-Post:</strong> Invoices posted instantly</li>
+                    <li><strong>Auto-Pay:</strong> Payments registered automatically</li>
+                    <li><strong>Auto-Reconcile:</strong> Full reconciliation done</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🇰🇪 eTIMS Integration</h3>
+                <ul>
+                    <li><strong>Automatic Submission:</strong> Sent to KRA eTIMS</li>
+                    <li><strong>Error Handling:</strong> Robust failure management</li>
+                    <li><strong>Logging:</strong> Complete audit trail</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📄 Enhanced Invoices</h3>
+                <ul>
+                    <li><strong>eTIMS Fields:</strong> All KRA details displayed</li>
+                    <li><strong>QR Codes:</strong> Verification QR codes</li>
+                    <li><strong>Professional Reports:</strong> Print-ready invoices</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🛡️ Reliability</h3>
+                <ul>
+                    <li><strong>Non-Blocking:</strong> Errors don't stop sales</li>
+                    <li><strong>Comprehensive Logs:</strong> Easy debugging</li>
+                    <li><strong>Tested:</strong> Production-ready code</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔄 How It Works</h2>
+        <div class="workflow">
+            <ol>
+                <li><strong>Customer Checkout:</strong> Create POS order and select "Invoice" option</li>
+                <li><strong>Click Validate:</strong> Press the validate button in POS interface</li>
+                <li><strong>Auto-Create Invoice:</strong> System generates customer invoice automatically</li>
+                <li><strong>Auto-Post Invoice:</strong> Invoice is posted without manual intervention</li>
+                <li><strong>Auto-Register Payment:</strong> Payment recorded using POS payment method</li>
+                <li><strong>Auto-Reconcile:</strong> Payment reconciled with invoice</li>
+                <li><strong>eTIMS Submission:</strong> Invoice sent to KRA eTIMS system</li>
+                <li><strong>Display Details:</strong> eTIMS receipt number, QR code, and control unit shown on invoice</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Perfect For</h2>
+        <ul>
+            <li>✅ Kenyan retail businesses using Odoo POS</li>
+            <li>✅ Companies required to comply with KRA eTIMS regulations</li>
+            <li>✅ Businesses wanting to eliminate manual invoice processing</li>
+            <li>✅ Shops needing automated tax compliance</li>
+            <li>✅ Organizations seeking streamlined POS-to-accounting workflow</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📦 What You Get</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Invoice Automation</h3>
+                <p>Complete automation from POS order to posted, paid, and reconciled invoice</p>
+            </div>
+            <div class="feature-card">
+                <h3>eTIMS Compliance</h3>
+                <p>Automatic submission to KRA with all required tax information</p>
+            </div>
+            <div class="feature-card">
+                <h3>Enhanced Reports</h3>
+                <p>Professional invoice reports with eTIMS details and QR codes</p>
+            </div>
+            <div class="feature-card">
+                <h3>Peace of Mind</h3>
+                <p>Robust error handling ensures business continuity</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Technical Information</h2>
+        <div class="tech-details">
+            <p><strong>Version:</strong> 15.0.1.0.0</p>
+            <p><strong>Odoo Version:</strong> 15.0</p>
+            <p><strong>Dependencies:</strong></p>
+            <ul>
+                <li>point_of_sale (Odoo Core)</li>
+                <li>account (Odoo Core)</li>
+                <li>l10n_ke_etims_vscu (Kenya eTIMS Integration)</li>
+            </ul>
+            <p><strong>Models Extended:</strong></p>
+            <ul>
+                <li>pos.order - Automatic invoice processing</li>
+                <li>account.move - eTIMS display enhancements</li>
+            </ul>
+        </div>
+        
+        <div class="highlight">
+            <strong>⚠️ Important:</strong> This module requires the <code>l10n_ke_etims_vscu</code> module 
+            (Kenya eTIMS Integration for Odoo v15) to be installed and properly configured with your 
+            KRA eTIMS credentials.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Installation</h2>
+        <ol>
+            <li>Ensure <code>l10n_ke_etims_vscu</code> module is installed and configured</li>
+            <li>Install this module from Odoo Apps</li>
+            <li>Configure your POS to use invoice option</li>
+            <li>Start processing orders - automation happens automatically!</li>
+        </ol>
+    </div>
+
+    <!-- <div class="section">
+        <h2>💼 Support & Contact</h2>
+        <p>
+            <strong>Author:</strong> Morris-Kinyua<br>
+            <strong>Support:</strong> <a href="https://wa.me/2547105050561">WhatsApp Support</a><br>
+            <strong>License:</strong> OPL-1 (Odoo Proprietary License)
+        </p>
+    </div> -->
+
+    <div class="section" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2 style="color: white;">Ready to Automate Your Invoice Processing?</h2>
+        <p style="font-size: 1.1em;">Install now and experience seamless POS-to-eTIMS integration!</p>
+    </div>
+</body>
+</html>
