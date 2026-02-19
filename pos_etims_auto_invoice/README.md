@@ -51,3 +51,7 @@ This module automatically creates posted and paid invoices when the validate but
 - Extends `account.move` model for eTIMS display enhancements
 - Includes custom report template for eTIMS details
 - Robust error handling and logging throughout
+
+
+
+Also before installation ensure you have a l10n_ke_etims_vscu for v15 module installed
