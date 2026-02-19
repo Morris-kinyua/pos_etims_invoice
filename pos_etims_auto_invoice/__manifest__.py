@@ -14,6 +14,7 @@
     'data': [
         'views/account_move_views.xml',
     ],
+    'images': ['static/description/icon.png'],
     'website': 'https://wa.me/2547105050561',
     'support': 'https://wa.me/2547105050561',
     'license': 'OPL-1',
