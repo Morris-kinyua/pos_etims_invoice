@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="view_move_form_etims_auto" model="ir.ui.view">
+            <field name="name">account.move.form.etims.auto</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="l10n_ke_etims_vscu.invoice_form_inherit_l10n_ke_oscu"/>
+            <field name="arch" type="xml">
+                <field name="l10n_ke_oscu_internal_data" position="after">
+                    <field name="l10n_ke_qr_code_url" readonly="1" widget="url" 
+                           attrs="{'invisible': [('l10n_ke_qr_code_url', '=', False)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
